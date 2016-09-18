@@ -10,8 +10,9 @@ import java.util.*;
  *
  * @author: Bruce Quig
  * @author: Michael Kšlling (mik)
+ * @edited: Tyler Friedberg
  *
- * @version 2011.07.31
+ * @version 2016.09.18
  */
 public class Canvas
 {
@@ -142,6 +143,18 @@ public class Canvas
         }
         else if(colorString.equals("white")) {
             graphic.setColor(Color.white);
+        }
+        else if (colorString.equals("beige")) {
+            graphic.setColor(new Color(209,200,132));
+        }
+        else if (colorString.equals("brown1")) {
+            graphic.setColor(new Color(75,42,20));
+        }
+        else if (colorString.equals("brown2")) {
+            graphic.setColor(new Color(112,85,50));
+        }
+        else if (colorString.equals("brown3")) {
+            graphic.setColor(new Color(53,32,5));
         }
         else {
             graphic.setColor(Color.black);
