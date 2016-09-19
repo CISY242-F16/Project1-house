@@ -18,6 +18,7 @@ public class Picture
     private Circle ball;
     private Person owner;
     private Person friend;
+    private Square grass;
 
     /**
      * Constructor for objects of class Picture
@@ -76,6 +77,13 @@ public class Picture
         friend.moveHorizontal(100);
         friend.moveVertical(25);
         friend.makeVisible();
+        
+        grass = new Square();
+        grass.changeColor("green");
+        grass.changeSize(500);
+        grass.moveVertical(135);
+        grass.moveHorizontal(-310);
+        grass.makeVisible();
     }
 
     /**
