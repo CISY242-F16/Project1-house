@@ -3,18 +3,28 @@
  * the draw method. But wait, there's more: being an electronic picture, it
  * can be changed. You can set it to black-and-white display and back to
  * colors (only after it's been drawn, of course).
+ * 
+ * The picture is supposed to represent an alien in a ship.
  *
  * This class was written as an early example for teaching Java with BlueJ.
  * 
- * @author  Michael Kšlling and David J. Barnes
- * @version 2011.07.31
+ * @author  James Emge
+ * @version 2016.09.19
  */
 public class Picture
 {
-    private Square wall;
-    private Square window;
-    private Triangle roof;
-    private Circle sun;
+    private Square top;
+    private Square middle;
+    private Square bottom;
+    private Triangle cone;
+    private Square exhaustInner;
+    private Triangle exhaustLeft;
+    private Triangle exhaustRight;
+    private Circle porthole;
+    private Person alien;
+    private Circle eyeLeft;
+    private Circle eyeRight;
+    private Square cover;
 
     /**
      * Constructor for objects of class Picture
@@ -29,31 +39,82 @@ public class Picture
      */
     public void draw()
     {
-        wall = new Square();
-        wall.moveHorizontal(-140);
-        wall.moveVertical(20);
-        wall.changeSize(120);
-        wall.makeVisible();
+        top = new Square();
+        top.changeColor("black");
+        top.moveHorizontal(-140);
+        top.moveVertical(-60);
+        top.makeVisible();
         
-        window = new Square();
-        window.changeColor("black");
-        window.moveHorizontal(-120);
-        window.moveVertical(40);
-        window.changeSize(40);
-        window.makeVisible();
+        middle = new Square();
+        middle.changeColor("black");
+        middle.moveHorizontal(-140);
+        middle.makeVisible();
 
-        roof = new Triangle();  
-        roof.changeSize(60, 180);
-        roof.moveHorizontal(20);
-        roof.moveVertical(-60);
-        roof.makeVisible();
+        cone = new Triangle();  
+        cone.changeColor("black");
+        cone.changeSize(60, 60);
+        cone.moveHorizontal(-10);
+        cone.moveVertical(-140);
+        cone.makeVisible();
 
-        sun = new Circle();
-        sun.changeColor("yellow");
-        sun.moveHorizontal(100);
-        sun.moveVertical(-40);
-        sun.changeSize(80);
-        sun.makeVisible();
+        porthole = new Circle();
+        porthole.changeColor("blue");
+        porthole.moveHorizontal(-55);
+        porthole.moveVertical(-30);
+        porthole.changeSize(50);
+        porthole.makeVisible();
+        
+        alien = new Person();
+        alien.changeColor("green");
+        alien.moveHorizontal(-80);
+        alien.moveVertical(-100);
+        alien.makeVisible();
+        
+        cover = new Square();
+        cover.changeColor("black");
+        cover.moveHorizontal(-140);
+        cover.moveVertical(-10);
+        cover.makeVisible();
+        
+        eyeLeft = new Circle();
+        eyeLeft.changeColor("black");
+        eyeLeft.moveHorizontal(-36);
+        eyeLeft.moveVertical(-12);
+        eyeLeft.changeSize(5);
+        eyeLeft.makeVisible();
+        
+        eyeRight = new Circle();
+        eyeRight.changeColor("black");
+        eyeRight.moveHorizontal(-30);
+        eyeRight.moveVertical(-12);
+        eyeRight.changeSize(5);
+        eyeRight.makeVisible();
+        
+        bottom = new Square();
+        bottom.changeColor("black");
+        bottom.moveHorizontal(-140);
+        bottom.moveVertical(60);
+        bottom.makeVisible();
+        
+        exhaustInner = new Square();
+        exhaustInner.changeColor("yellow");
+        exhaustInner.moveHorizontal(-140);
+        exhaustInner.moveVertical(120);
+        exhaustInner.makeVisible();
+        
+        exhaustLeft = new Triangle();  
+        exhaustLeft.changeColor("red");
+        exhaustLeft.changeSize(60, 60);
+        exhaustLeft.moveHorizontal(-40);
+        exhaustLeft.moveVertical(100);
+        exhaustLeft.makeVisible();
+        
+        exhaustRight = new Triangle();  
+        exhaustRight.changeColor("red");
+        exhaustRight.changeSize(60, 60);
+        exhaustRight.moveHorizontal(20);
+        exhaustRight.moveVertical(100);
+        exhaustRight.makeVisible();
     }
 
     /**
@@ -61,12 +122,15 @@ public class Picture
      */
     public void setBlackAndWhite()
     {
-        if (wall != null)   // only if it's painted already...
+        if (top != null)   // only if it's painted already...
         {
-            wall.changeColor("black");
-            window.changeColor("white");
-            roof.changeColor("black");
-            sun.changeColor("black");
+            porthole.changeColor("white");
+            alien.changeColor("black");
+            eyeLeft.changeColor("white");
+            eyeRight.changeColor("white");
+            exhaustInner.changeColor("white");
+            exhaustRight.changeColor("black");
+            exhaustLeft.changeColor("black");
         }
     }
 
@@ -75,12 +139,16 @@ public class Picture
      */
     public void setColor()
     {
-        if (wall != null)   // only if it's painted already...
+        if (top != null)   // only if it's painted already...
         {
-            wall.changeColor("red");
-            window.changeColor("black");
-            roof.changeColor("green");
-            sun.changeColor("yellow");
+            porthole.changeColor("blue");
+            alien.changeColor("green");
+            eyeLeft.changeColor("black");
+            eyeRight.changeColor("black");
+            exhaustInner.changeColor("yellow");
+            exhaustRight.changeColor("red");
+            exhaustLeft.changeColor("red");
+            cover.changeColor("black");
         }
     }
 }
