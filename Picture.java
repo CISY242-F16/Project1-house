@@ -100,6 +100,7 @@ public class Picture
             ball.changeColor("black");
             owner.changeColor("white");
             friend.changeColor("white");
+            grass.changeColor("black");
         }
     }
 
@@ -117,6 +118,7 @@ public class Picture
             ball.changeColor("blue");
             owner.changeColor("black");
             friend.changeColor("black");
+            grass.changeColor("green");
         }
     }
 }
