@@ -6,7 +6,7 @@
  *
  * This class was written as an early example for teaching Java with BlueJ.
  * 
- * @author  Michael Kšlling and David J. Barnes
+ * @author  Michael Kslling and David J. Barnes
  * @version 2011.07.31
  */
 public class Picture
@@ -15,6 +15,9 @@ public class Picture
     private Square window;
     private Triangle roof;
     private Circle sun;
+    private Circle ball;
+    private Person owner;
+    private Person friend;
 
     /**
      * Constructor for objects of class Picture
@@ -54,6 +57,25 @@ public class Picture
         sun.moveVertical(-40);
         sun.changeSize(80);
         sun.makeVisible();
+
+        ball = new Circle();
+        ball.changeColor("blue");
+        ball.moveHorizontal(-150);
+        ball.moveVertical(125);
+        ball.changeSize(20);
+        ball.makeVisible();
+        
+        owner = new Person();
+        owner.changeColor("black");
+        owner.moveHorizontal(-175);
+        owner.moveVertical(25);
+        owner.makeVisible();
+        
+        friend = new Person();
+        friend.changeColor("black");
+        friend.moveHorizontal(100);
+        friend.moveVertical(25);
+        friend.makeVisible();
     }
 
     /**
@@ -67,6 +89,9 @@ public class Picture
             window.changeColor("white");
             roof.changeColor("black");
             sun.changeColor("black");
+            ball.changeColor("black");
+            owner.changeColor("white");
+            friend.changeColor("white");
         }
     }
 
@@ -81,6 +106,9 @@ public class Picture
             window.changeColor("black");
             roof.changeColor("green");
             sun.changeColor("yellow");
+            ball.changeColor("blue");
+            owner.changeColor("black");
+            friend.changeColor("black");
         }
     }
 }
