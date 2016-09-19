@@ -58,19 +58,19 @@ public class Picture
         sun.moveVertical(-40);
         sun.changeSize(80);
         sun.makeVisible();
-
-        ball = new Circle();
-        ball.changeColor("blue");
-        ball.moveHorizontal(-150);
-        ball.moveVertical(125);
-        ball.changeSize(20);
-        ball.makeVisible();
         
         owner = new Person();
         owner.changeColor("black");
         owner.moveHorizontal(-175);
         owner.moveVertical(25);
         owner.makeVisible();
+        
+        ball = new Circle();
+        ball.changeColor("blue");
+        ball.moveHorizontal(-150);
+        ball.moveVertical(125);
+        ball.changeSize(20);
+        ball.makeVisible();
         
         friend = new Person();
         friend.changeColor("black");
