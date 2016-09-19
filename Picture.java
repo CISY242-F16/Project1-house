@@ -3,11 +3,13 @@
  * the draw method. But wait, there's more: being an electronic picture, it
  * can be changed. You can set it to black-and-white display and back to
  * colors (only after it's been drawn, of course).
+ * 
+ * The picture is supposed to represent an alien in a ship.
  *
  * This class was written as an early example for teaching Java with BlueJ.
  * 
  * @author  James Emge
- * @version 2011.07.31
+ * @version 2016.09.19
  */
 public class Picture
 {
@@ -95,20 +97,20 @@ public class Picture
         bottom.makeVisible();
         
         exhaustInner = new Square();
-        exhaustInner.changeColor("red");
+        exhaustInner.changeColor("yellow");
         exhaustInner.moveHorizontal(-140);
         exhaustInner.moveVertical(120);
         exhaustInner.makeVisible();
         
         exhaustLeft = new Triangle();  
-        exhaustLeft.changeColor("yellow");
+        exhaustLeft.changeColor("red");
         exhaustLeft.changeSize(60, 60);
         exhaustLeft.moveHorizontal(-40);
         exhaustLeft.moveVertical(100);
         exhaustLeft.makeVisible();
         
         exhaustRight = new Triangle();  
-        exhaustRight.changeColor("yellow");
+        exhaustRight.changeColor("red");
         exhaustRight.changeSize(60, 60);
         exhaustRight.moveHorizontal(20);
         exhaustRight.moveVertical(100);
@@ -143,9 +145,9 @@ public class Picture
             alien.changeColor("green");
             eyeLeft.changeColor("black");
             eyeRight.changeColor("black");
-            exhaustInner.changeColor("red");
-            exhaustRight.changeColor("yellow");
-            exhaustLeft.changeColor("yellow");
+            exhaustInner.changeColor("yellow");
+            exhaustRight.changeColor("red");
+            exhaustLeft.changeColor("red");
             cover.changeColor("black");
         }
     }
